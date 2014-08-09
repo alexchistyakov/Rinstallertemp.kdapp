@@ -1,0 +1,41 @@
+{
+  "background": false,
+  "behavior": "application",
+  "version": "0.1",
+  "title": "R Installer",
+  "name": "Rinstaller",
+  "identifier": "com.koding.apps.rinstaller",
+  "path": "~/Applications/Rinstaller",
+  "homepage": "alexchistyakov.kd.io/rinstaller",
+  "repository": "git://github.com/alexchistyakov/rinstaller.kdapp.git",
+  "description": "RInstaller : a Koding application created with the blank template.",
+  "category": "web-app",
+  "source": {
+    "blocks": {
+      "app": {
+        "files": [
+          "./config.coffee",
+          "./controllers/kiteHelper.coffee",
+          "./controllers/installer.coffee",
+          "./views/index.coffee",
+          "./index.coffee"
+        ]
+      }
+    },
+    "stylesheets": [
+      "./resources/style.css"
+    ],
+    "less": [
+      "./less/mixins.less",
+      "./less/modal.less",
+      "./less/style.less"
+    ]
+  },
+  "options": {
+    "type": "tab"
+  },
+  "icns": {
+    "128": "./resources/icon.128.png"
+  },
+  "fileTypes": []
+}
