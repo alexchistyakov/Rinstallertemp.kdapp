@@ -9,7 +9,7 @@ class RInstallerMainView extends KDView
     @addSubView @container = new KDCustomHTMLView
       tagName       : 'div'
       cssClass      : 'container'
-
+      
     @container.addSubView new KDCustomHTMLView
       tagName       : 'img'
       cssClass      : 'logo'
@@ -22,23 +22,7 @@ class RInstallerMainView extends KDView
 
     @container.addSubView @link = new KDCustomHTMLView
       cssClass : 'hidden running-link'
-
-    @link.setSession = =>
-      @Installer.isConfigured()
-        .then (configured)=>
-          url = unless configured then configureURL else launchURL
-
-          if url
-            @link.updatePartial """
-              Click here to launch #{appName}:
-              <a target='_blank' href='#{url}'>#{url}</a>
-            """
-            @link.show()
-        .catch (error)=>
-          @link.updatePartial "Failed to check if #{appName} is configured."
-          @link.show()
-          console.error error
-
+      
     @container.addSubView @buttonContainer = new KDCustomHTMLView
       tagName       : 'div'
       cssClass      : 'button-container'

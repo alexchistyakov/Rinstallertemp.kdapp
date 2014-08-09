@@ -1,0 +1,122 @@
+.new-kdmodal p {
+  margin: 10px 0;
+}
+.new-kdmodal ol {
+  list-style-type: decimal;
+  padding-left: 40px;
+}
+.new-kdmodal ol li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+.R-installer {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.9);
+  overflow: auto;
+}
+.R-installer .container {
+  width: 600px;
+  margin: 50px auto 20px auto;
+  overflow: visible;
+}
+.R-installer .container .progressbar-container {
+  height: 40px;
+  margin: 10px 0 0 0;
+  border: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.R-installer .container .progressbar-container > .dark-label {
+  font-size: 14px;
+  top: 8px;
+  left: 8px;
+  text-align: left;
+}
+.R-installer .container .progressbar-container span,
+.R-installer .container .progressbar-container .bar span {
+  text-shadow: none !important;
+}
+.R-installer .container .progressbar-container .bar {
+  background: #1AAF5D;
+  border-radius: 0;
+}
+.R-installer .container .progressbar-container .bar > .light-label {
+  font-size: 18px;
+  top: 12px;
+  left: 14px;
+  text-align: left;
+  text-decoration: none;
+}
+.R-installer .container .toggle-button {
+  position: absolute;
+  top: 253px;
+  left: 703px;
+  z-index: 4;
+  height: 28px;
+  width: 100px;
+}
+.R-installer .container .toggle-button > .button-title {
+  font-size: 12px;
+}
+.R-installer .container .logo {
+  width: 200px;
+  left: 50%;
+  position: relative;
+  margin-left: -110px;
+  margin-top: 20px;
+}
+.R-installer .container .button-container {
+  text-align: center;
+}
+.R-installer .container .button-container .button {
+  margin: 15px;
+}
+.R-installer .container .description {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+}
+.R-installer .container .description p {
+  padding: 0 0 20px;
+}
+.R-installer .container .description a {
+  text-decoration: underline;
+  color: black;
+}
+.R-installer .container .description .code{
+  background:#ddd;
+  font-size: 14px;
+  color:#333;
+  padding: 10px 10px 10px;
+}
+
+.R-installer .container .description b,
+.R-installer .container .description .bold {
+  text-decoration: none;
+  font-weight: bold;
+}
+.R-installer .container .description .center {
+  text-align: center;
+}
+.R-installer .container .description img {
+  width: 100%;
+}
+.R-installer .container .running-link {
+  text-align: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  background: #eee;
+  margin-bottom: 15px;
+  line-height: 22px;
+}
+.R-installer .container .running-link a {
+  text-decoration: none;
+  color: blue;
+  text-shadow: none;
+}
+.R-installer .container .picture {
+  width: 800px;
+}

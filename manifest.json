@@ -24,11 +24,6 @@
     },
     "stylesheets": [
       "./resources/style.css"
-    ],
-    "less": [
-      "./less/mixins.less",
-      "./less/modal.less",
-      "./less/style.less"
     ]
   },
   "options": {
