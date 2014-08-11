@@ -1,4 +1,4 @@
-/* Compiled by kdc on Mon Aug 11 2014 19:31:51 GMT+0000 (UTC) */
+/* Compiled by kdc on Mon Aug 11 2014 19:36:06 GMT+0000 (UTC) */
 (function() {
 /* KDAPP STARTS */
 if (typeof window.appPreview !== "undefined" && window.appPreview !== null) {
@@ -27,7 +27,7 @@ github = "https://rest.kd.io/alexchistyakov/RInstaller.kdapp/master";
 
 logo = "" + github + "/resources/logo.png";
 
-launchURL = "https://" + domain + "/" + app + "/";
+launchURL = false;
 
 configureURL = "https://" + domain + "/" + app + "/install";
 
