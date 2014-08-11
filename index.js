@@ -1,11 +1,11 @@
-/* Compiled by kdc on Sat Aug 09 2014 05:46:27 GMT+0000 (UTC) */
+/* Compiled by kdc on Mon Aug 11 2014 19:31:51 GMT+0000 (UTC) */
 (function() {
 /* KDAPP STARTS */
 if (typeof window.appPreview !== "undefined" && window.appPreview !== null) {
   var appView = window.appPreview
 }
 /* BLOCK STARTS: /home/alexchistyakov/Applications/Rinstaller.kdapp/config.coffee */
-var FAILED, INSTALL, INSTALLED, NOT_INSTALLED, REINSTALL, UNINSTALL, WORKING, WRONG_PASSWORD, app, appCSS, appName, configureURL, configuredChecker, description, domain, github, installChecker, launchURL, logger, logo, scripts, session, user, _ref;
+var FAILED, INSTALL, INSTALLED, NOT_INSTALLED, REINSTALL, UNINSTALL, WORKING, WRONG_PASSWORD, app, appCSS, appName, configureURL, configuredChecker, description, domain, getSession, github, installChecker, launchURL, logger, logo, scripts, user, _ref;
 
 _ref = [0, 1, 2, 3, 4, 5, 6, 7], NOT_INSTALLED = _ref[0], INSTALLED = _ref[1], WORKING = _ref[2], FAILED = _ref[3], WRONG_PASSWORD = _ref[4], INSTALL = _ref[5], REINSTALL = _ref[6], UNINSTALL = _ref[7];
 
@@ -13,7 +13,7 @@ user = KD.nick();
 
 domain = "" + user + ".kd.io";
 
-session = function() {
+getSession = function() {
   return (Math.random() + 1).toString(36).substring(7);
 };
 
@@ -344,6 +344,22 @@ RInstallerMainView = (function(_super) {
     this.container.addSubView(this.link = new KDCustomHTMLView({
       cssClass: 'hidden running-link'
     }));
+    this.link.setSession = (function(_this) {
+      return function() {
+        return _this.Installer.isConfigured().then(function(configured) {
+          var url;
+          url = !configured ? configureURL : launchURL;
+          if (url) {
+            _this.link.updatePartial("Click here to launch " + appName + ":\n<a target='_blank' href='" + url + "'>" + url + "</a>");
+            return _this.link.show();
+          }
+        })["catch"](function(error) {
+          _this.link.updatePartial("Failed to check if " + appName + " is configured.");
+          _this.link.show();
+          return console.error(error);
+        });
+      };
+    })(this);
     this.container.addSubView(this.buttonContainer = new KDCustomHTMLView({
       tagName: 'div',
       cssClass: 'button-container'
